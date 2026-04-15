@@ -63,7 +63,7 @@ export default function Dashboard() {
           </div>
 
           {/* Backend Status */}
-          {/* <div className={`mb-6 p-3 rounded ${
+          <div className={`mb-6 p-3 rounded ${
             backendConnected ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'
           }`}>
             <p className="font-semibold">
@@ -74,7 +74,7 @@ export default function Dashboard() {
                 Make sure your Python Flask server is running on port 5000
               </p>
             )}
-          </div> */}
+          </div>
 
           {/* Email Verification Warning */}
           {user && !user.emailVerified && (
