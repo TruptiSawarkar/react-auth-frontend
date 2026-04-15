@@ -145,10 +145,7 @@ export default function Dashboard() {
           }`}>
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-white text-opacity-90 text-sm font-medium">Backend Status</p>
-                <p className="text-white text-xl sm:text-2xl font-bold mt-1">
-                  {backendConnected ? 'Connected' : 'Disconnected'}
-                </p>
+                
               </div>
               <div className="h-12 w-12 bg-white bg-opacity-20 rounded-lg flex items-center justify-center">
                 {backendConnected ? (
