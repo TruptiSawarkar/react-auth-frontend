@@ -6,22 +6,15 @@ import { api } from '../config/api';
 export default function Dashboard() {
   const { user, idToken, signOut, resendVerificationEmail } = useAuth();
   const navigate = useNavigate();
-  const [backendConnected, setBackendConnected] = useState(false);
   const [profileData, setProfileData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    checkBackendConnection();
     if (idToken) {
       loadProfile();
     }
   }, [idToken]);
-
-  const checkBackendConnection = async () => {
-    const connected = await api.testConnection();
-    setBackendConnected(connected);
-  };
 
   const loadProfile = async () => {
     setLoading(true);
@@ -138,27 +131,7 @@ export default function Dashboard() {
         </div>
 
         {/* Stats Cards - Responsive Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
-          {/* Backend Status Card */}
-          {/* <div className={`rounded-xl shadow-lg p-4 sm:p-6 transition-all duration-300 hover:shadow-xl ${
-            backendConnected ? 'bg-gradient-to-br from-green-500 to-green-600' : 'bg-gradient-to-br from-red-500 to-red-600'
-          }`}>
-            <div className="flex items-center justify-between">
-              
-              <div className="h-12 w-12 bg-white bg-opacity-20 rounded-lg flex items-center justify-center">
-                {backendConnected ? (
-                  <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                ) : (
-                  <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                )}
-              </div>
-            </div>
-          </div> */}
-
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
           {/* Email Status Card */}
           <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl shadow-lg p-4 sm:p-6 transition-all duration-300 hover:shadow-xl">
             <div className="flex items-center justify-between">
