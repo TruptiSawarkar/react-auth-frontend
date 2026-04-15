@@ -67,7 +67,7 @@ export default function Dashboard() {
             backendConnected ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'
           }`}>
             <p className="font-semibold">
-              Backend Status: {backendConnected ? '✓ Connected to Python API' : '✗ Not connected to Python backend'}
+             
             </p>
             {!backendConnected && (
               <p className="text-sm mt-1">
