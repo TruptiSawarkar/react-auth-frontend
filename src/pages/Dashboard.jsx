@@ -140,13 +140,11 @@ export default function Dashboard() {
         {/* Stats Cards - Responsive Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
           {/* Backend Status Card */}
-          <div className={`rounded-xl shadow-lg p-4 sm:p-6 transition-all duration-300 hover:shadow-xl ${
+          {/* <div className={`rounded-xl shadow-lg p-4 sm:p-6 transition-all duration-300 hover:shadow-xl ${
             backendConnected ? 'bg-gradient-to-br from-green-500 to-green-600' : 'bg-gradient-to-br from-red-500 to-red-600'
           }`}>
             <div className="flex items-center justify-between">
-              <div>
-                
-              </div>
+              
               <div className="h-12 w-12 bg-white bg-opacity-20 rounded-lg flex items-center justify-center">
                 {backendConnected ? (
                   <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -159,7 +157,7 @@ export default function Dashboard() {
                 )}
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Email Status Card */}
           <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl shadow-lg p-4 sm:p-6 transition-all duration-300 hover:shadow-xl">
