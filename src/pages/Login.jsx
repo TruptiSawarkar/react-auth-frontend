@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { signInWithEmailAndPassword, auth } from '../config/firebase';
+import { auth, signInWithEmailAndPassword } from '../config/firebase';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -17,8 +17,14 @@ export default function Login() {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       navigate('/dashboard');
-    } catch (error.code) {
-      case 'auth/user-not-found':
+    } 
+        catch (error) {
+  console.error(error); // optional for debugging
+
+  let message = 'Login failed. Please try again.';
+
+  switch (error.code) {
+    case 'auth/user-not-found':
       message = 'No account found with this email.';
       break;
 
@@ -36,7 +42,9 @@ export default function Login() {
 
     default:
       message = 'Invalid email or password.';
-      }
+  }
+
+  
       setError(message);
     }
     setLoading(false);
