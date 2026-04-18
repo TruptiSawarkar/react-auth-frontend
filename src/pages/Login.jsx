@@ -17,20 +17,25 @@ export default function Login() {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       navigate('/dashboard');
-    } catch (error) {
-      let message = 'Login failed. ';
-      switch (error.code) {
-        case 'auth/user-not-found':
-          message = 'No account found with this email.';
-          break;
-        case 'auth/wrong-password':
-          message = 'Incorrect password.';
-          break;
-        case 'auth/too-many-requests':
-          message = 'Too many failed attempts. Try again later.';
-          break;
-        default:
-          message += error.message;
+    } catch (error.code) {
+      case 'auth/user-not-found':
+      message = 'No account found with this email.';
+      break;
+
+    case 'auth/wrong-password':
+      message = 'Incorrect password.';
+      break;
+
+    case 'auth/invalid-email':
+      message = 'Invalid email format.';
+      break;
+
+    case 'auth/too-many-requests':
+      message = 'Too many attempts. Try again later.';
+      break;
+
+    default:
+      message = 'Invalid email or password.';
       }
       setError(message);
     }
