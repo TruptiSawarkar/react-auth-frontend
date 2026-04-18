@@ -97,12 +97,12 @@ export default function Profile() {
         <div className="bg-white rounded-lg shadow p-6 mb-6">
           <h1 className="text-2xl font-bold mb-6">User Profile</h1>
           
-          {message && (
+          {/* {message && (
             <div className={`mb-4 p-3 rounded ${message.includes('success') ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
               {message}
             </div>
           )}
-          
+           */}
           <div className="mb-6">
             <h2 className="text-lg font-semibold mb-3">Account Information</h2>
             <div className="space-y-2">
